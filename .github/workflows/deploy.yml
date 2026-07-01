@@ -142,12 +142,12 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - uses: actions/checkout@v4
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
           name: dist
           path: assets
-      - uses: actions/checkout@v4
       - name: Move assets to root
         run: mv assets/release.zip release.zip
 
